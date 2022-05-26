@@ -1,0 +1,5 @@
+#port forwarding
+kubectl port-forward [pod-name] [port:port]
+
+#restart pod
+kubectl delete pod {pod-number}
