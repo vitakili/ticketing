@@ -3,3 +3,13 @@ kubectl port-forward [pod-name] [port:port]
 
 #restart pod
 kubectl delete pod {pod-number}
+
+#delete unused and duplicate docker files
+docker system prune -a 
+
+#in jest testing you could use "test" or "it"
+#"it" is and alias for "test"
+
+
+# MONGO SHELL
+kubectl exec -it orders-mongo-depl-[pod] mongo
