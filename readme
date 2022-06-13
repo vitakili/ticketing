@@ -1,8 +1,22 @@
+#build docker image
+docker buld -t [dockerid]/[image-name] .
+
+#push image to docker hub
+docker push [dockerid]/[image-name]
+
 #port forwarding
 kubectl port-forward [pod-name] [port:port]
 
+# Set jwt-secret
+kubectl create secret generic jwt-secret --from-literal=JWT_KEY=asdf
+# Set Stripe secret key
+kubectl create secret generic stripe-secret --from-literal STRIPE_KEY=sk_test_51L89EtJyRlMQXf0zfjPAJ7nQTxbZWe93pnoA3OMrHg7fyfp9ts0IOrWJZ5CqU1bGUwsQiraVOm5T7z37fCdoI5Uu00cTZMRVJo
+
 #restart pod
 kubectl delete pod {pod-number}
+
+#restart all pods
+kubectl delete --all pods
 
 #delete unused and duplicate docker files
 docker system prune -a 
@@ -12,4 +26,21 @@ docker system prune -a
 
 
 # MONGO SHELL
-kubectl exec -it orders-mongo-depl-[pod] mongo
+kubectl exec -it orders-mongo-depl-[pod]
+
+# Reinstall ingess-nginx in infra/k8s folder - dont forget
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.2.0/deploy/static/provider/cloud/deploy.yaml
+
+# To supress status-checks
+skaffold dev --status-check=false
+
+# To supress memory usage of WSL
+--wsl shutdown
+# Create a file in USERS/[username]/.wslconfig
+[wsl2]
+memory=4GB
+
+# React stripe checkout
+npm i react-stripe-checkout
+# Needs to be installed with
+npm i prop-types

@@ -7,7 +7,9 @@ import { natsWrapper } from '../nats-wrapper';
 
 const router = express.Router();
 
-router.post('/api/tickets', requireAuth, [
+router.post('/api/tickets', 
+    requireAuth, 
+    [
     body('title')
         .not()
         .isEmpty()
