@@ -43,6 +43,7 @@ memory=4GB
 # React stripe checkout
 npm i react-stripe-checkout
 # Needs to be installed with
+<<<<<<< HEAD
 npm i prop-types
 
 # Change GIT branch
@@ -59,3 +60,6 @@ kubectl config view
 
 # Use a different context
 kubectl config use-context [context_name]
+=======
+npm i prop-types
+>>>>>>> b881c883550606c4137073572ee9d564f795c6c4
