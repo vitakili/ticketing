@@ -44,6 +44,3 @@ memory=4GB
 npm i react-stripe-checkout
 # Needs to be installed with
 npm i prop-types
-
-# Change GIT branch
-git checkout [branch]
