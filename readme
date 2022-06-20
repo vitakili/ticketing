@@ -47,3 +47,15 @@ npm i prop-types
 
 # Change GIT branch
 git checkout [branch]
+
+# Digital Ocean on Windows
+doctl auth init -t [YOUR_TOKEN]
+
+# Digital Ocean adding cluster by name
+doctl kubernetes cluster kubeconfig save [cluster_name]
+
+# List all contexts
+kubectl config view
+
+# Use a different context
+kubectl config use-context [context_name]
