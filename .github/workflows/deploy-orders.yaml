@@ -12,14 +12,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+<<<<<<< HEAD
+=======
+      - run:  cd orders && docker build -t vitakili/orders .
+>>>>>>> a5cc90d3d100694e3e7b5a673f5da79f1e0b26fc
       - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+<<<<<<< HEAD
       - run: cd orders && docker build -t vitakili/orders .
+=======
+>>>>>>> a5cc90d3d100694e3e7b5a673f5da79f1e0b26fc
       - run: docker push vitakili/orders
       - uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+<<<<<<< HEAD
       - run: doctl kubernetes cluster kubeconfig save vitatickets
       - run: kubectl rollout restart deployment orders-depl
+=======
+      - run:  doctl kubernetes cluster kubeconfig save vitatickets
+      - run:  kubectl rollout restart deployment orders-depl
+>>>>>>> a5cc90d3d100694e3e7b5a673f5da79f1e0b26fc

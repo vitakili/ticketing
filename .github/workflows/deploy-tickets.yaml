@@ -21,5 +21,10 @@ jobs:
       - uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+<<<<<<< HEAD
       - run: doctl kubernetes cluster kubeconfig save vitatickets
       - run: kubectl rollout restart deployment tickets-depl
+=======
+      - run:  doctl kubernetes cluster kubeconfig save vitatickets
+      - run:  kubectl rollout restart deployment tickets-depl
+>>>>>>> a5cc90d3d100694e3e7b5a673f5da79f1e0b26fc
